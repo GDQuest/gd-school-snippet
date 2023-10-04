@@ -19,14 +19,10 @@ func on_parse_snippet(args: Array) -> void:
 		return
 	
 	var CustomNode = GDScript.new()
-	CustomNode.source_code = """
-extends Node
-
-func _init() -> void:
-	pass
-	
+	CustomNode.source_code = """extends Node
 func _ready() -> void:
 %s
+	pass
 """ % args[0].indent("\t")
 	CustomNode.reload()
 	
